@@ -1,0 +1,3 @@
+module.exports = {
+  mongoURI: `mongodb://Aylin:sugartkd88@ds121373.mlab.com:21373/devconnecterudemy`
+};
