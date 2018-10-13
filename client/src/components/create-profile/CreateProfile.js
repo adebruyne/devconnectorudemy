@@ -23,20 +23,34 @@ class CreateProfile extends Component {
       instagram: "",
       errors: {}
     };
+    this.onChange = this.onChange.bind(this);
+    this.onSubmit = this.onSubmit.bind(this);
   }
 
   render() {
+    const { errors } = this.state;
     return (
       <div className="create-profile">
         <div className="container">
           <div className="row">
-          <div className="col-md-8 m-auto">
-          <h1 className="display-4 text-center">Create Your Profile</h1>
-          <p className="lead text-center">
-          Let's get some information to make your profile stand out</p>
-          <small className="d-block pb-3">* = required fields</small>
+            <div className="col-md-8 m-auto">
+              <h1 className="display-4 text-center">Create Your Profile</h1>
+              <p className="lead text-center">
+                Let's get some information to make your profile stand out
+              </p>
+              <small className="d-block pb-3">* = required fields</small>
+              <form onSubmit={this.onSubmit}>
+                <TextFieldGroup
+                  placeholder="* Profile Handle"
+                  name="handle"
+                  value={this.state.handle}
+                  onChange={this.onChange}
+                  error={errors.handle}
+                  info="A unidue handle for your profile URL. Your full name, company name, nickname"
+                />
+              </form>
+            </div>
           </div>
-           </div>
         </div>
       </div>
     );
