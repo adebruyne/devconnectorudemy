@@ -38,6 +38,7 @@ class CreateProfile extends Component {
     }
   }
 
+  //all the fields needed for state on submitting the form
   onSubmit(e) {
     e.preventDefault();
     // console.log("submit");
