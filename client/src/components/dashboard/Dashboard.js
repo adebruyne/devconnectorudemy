@@ -27,6 +27,7 @@ class Dashboard extends Component {
               Welcome <Link to={`/profile/${profile.handle}`}>{user.name}</Link>
             </p>
             <ProfileActions />
+            {/* TODO: exp and education */}
           </div>
         );
       } else {
