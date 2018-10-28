@@ -57,7 +57,7 @@ class CreateProfile extends Component {
       youtube: this.state.youtube,
       instagram: this.state.instagram
     };
-
+    console.log("hello!");
     this.props.createProfile(profileData, this.props.history);
   }
 
@@ -69,6 +69,7 @@ class CreateProfile extends Component {
     const { errors, displaySocialInputs } = this.state;
 
     let socialInputs;
+
     if (displaySocialInputs) {
       socialInputs = (
         <div>
