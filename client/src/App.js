@@ -20,6 +20,7 @@ import EditProfile from "./components/edit-profile/Edit-profile";
 import AddExperience from "./components/add-credentials/AddExperience";
 import AddEducation from "./components/add-credentials/AddEducation";
 
+
 import "./App.css";
 //Check for token
 if (localStorage.jwtToken) {
