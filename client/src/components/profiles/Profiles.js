@@ -5,7 +5,23 @@ import Spinner from "../common/Spinner";
 import { getProfiles } from "../../actions/profileAction";
 
 class Profiles extends Component {
+  componentDidMount() {
+    this.props.getProfiles();
+  }
   render() {
+    const { profiles, loading } = this.props.profile;
+    let profileItems;
+
+    if (profile === null || loading) {
+      profileItems = <Spinner />;
+    } else {
+      if (profiles.length > 0) {
+        <h1>PROFILES HERE</h1>;
+      } else {
+        profileItems = <h4>No profiles found...</h4>;
+      }
+    }
+
     return <div />;
   }
 }
@@ -20,6 +36,6 @@ const mapStateToProps = state => ({
 });
 
 export default connect(
-  null,
+  mapStateToProps,
   { getProfiles }
 )(Profiles);
