@@ -20,9 +20,16 @@ class ProfileCreds extends Component {
           <strong>Position:</strong> {exp.title}
         </p>
         <p>
-          {exp.location == "" ? null : (
+          {exp.location === "" ? null : (
             <span>
               <strong>Location:</strong> {exp.location}
+            </span>
+          )}
+        </p>
+        <p>
+          {exp.description === "" ? null : (
+            <span>
+              <strong>Description:</strong> {exp.description}
             </span>
           )}
         </p>
