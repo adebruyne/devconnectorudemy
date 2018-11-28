@@ -35,9 +35,50 @@ class ProfileCreds extends Component {
         </p>
       </li>
     ));
+    const eduItems = education.map(edu => (
+      <li key={edu._id} className="list-group-item">
+        <h4>{edu.school}</h4>
+        <p>
+          <Moment format="YYYY/MM/DD">{edu.from}</Moment> -
+          {edu.to === null ? (
+            " Now"
+          ) : (
+            <Moment format="YYYY/MM/DD">{edu.from}</Moment>
+          )}
+        </p>
+        <p>
+          <strong>Degree:</strong> {edu.degree}
+        </p>
+        <p>
+          <strong>Field Of Study:</strong> {edu.fieldofstudy}
+        </p>
+        <p>
+          {exp.description === "" ? null : (
+            <span>
+              <strong>Description:</strong> {exp.description}
+            </span>
+          )}
+        </p>
+      </li>
+    ));
     return (
-      <div>
-        <h1>TODO: ProfileCreds</h1>
+      <div className="row">
+        <div className="col-md-6">
+          <h3 className="text-center text-info">Experience</h3>
+          {expItems.length > 0 ? (
+            <ul className="list-group">{expItems}</ul>
+          ) : (
+            <p className="text-center"> No Experience Listed</p>
+          )}
+        </div>
+        <div className="col-md-6">
+          <h3 className="text-center text-info">Education</h3>
+          {eduItems.length > 0 ? (
+            <ul className="list-group">{eduItems}</ul>
+          ) : (
+            <p className="text-center"> No Education Listed</p>
+          )}
+        </div>
       </div>
     );
   }
