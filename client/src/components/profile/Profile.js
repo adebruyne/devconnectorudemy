@@ -51,6 +51,8 @@ class Profile extends Component {
         <div className="container">
           <div className="row">
             <div className="col-md-12">{profileContent}</div>
+            {/* Need to register course on Github to make API to get
+            user info */}
           </div>
         </div>
       </div>
